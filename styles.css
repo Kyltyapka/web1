@@ -1,0 +1,175 @@
+*{
+    margin: 0;
+    padding: 0; 
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: #0F1B33;
+}
+
+.header-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    
+    z-index: 3; /* Заразі повинен бути найвищим, щоб перекривати зображення */
+}
+
+
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    z-index: 4;
+    justify-content: space-around;
+}
+
+header .logo {
+    color: aliceblue;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+header .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+header .menu li {
+    list-style: none;
+    margin-left: 20px;
+}
+
+header .menu li a {
+    text-decoration: none;
+    padding: 6px 15px;
+    color: aliceblue;
+}
+
+header .menu li a:hover,
+header .menu li a.active {
+    background-color: aliceblue;
+    color: #191f5d;
+}
+
+section {
+
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding-top: 150px; /* Змініть відступ за потреби */
+    z-index: 2;
+    margin: 0;
+    overflow: hidden;
+   
+}
+
+section::before{
+    content: '';
+    width: 100%;
+    height: 300px;
+    bottom: -30px;
+    background:#0F1B33;    
+    position: absolute;
+    z-index: 12;
+    
+
+
+}
+
+
+section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100vw; 
+    height: 100vh; 
+    margin: 0; 
+    padding: 0; 
+    pointer-events: none;
+}
+
+#Mtext {
+    position: absolute;
+    top: 15%;
+    right: -1000px;
+    transform: translate(-50%, -50%);
+    color: aliceblue;
+    white-space: nowrap;
+    font-size: 7.5vw;
+    z-index: 2;
+    margin-bottom: 20px; 
+}
+
+#btn {
+    text-decoration: none;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    padding: 8px 30px;
+    border-radius: 40px;
+    background: #fff;
+    color: #0F1B33;
+    font-size: 1.5em;
+    z-index: 2;
+}
+
+
+section img#main {
+    z-index: 1;
+}
+
+section img#dark {
+    z-index: 3;
+}
+
+section img#light {
+    z-index: 2;
+}
+
+h3 {
+    color: aliceblue;
+    font-size: 24px;
+    z-index: 7;
+}
+
+.sec{
+    position: relative;
+    padding: 100px;
+}
+
+.sec h2{
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: aliceblue;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    body {
+        padding-top: 50px;
+    }
+    header {
+        padding: 20px 50px;
+    }
+    section {
+        padding: 0;
+    }
+}

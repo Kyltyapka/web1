@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header-container"> <!-- Контейнер для хедера з червоним фоном -->
+        <header>
+            <a href="#" class="logo">Ocean</a>
+            <ul class="menu">
+                <li><a href="#home" class="active"> Home</a></li>
+                <li><a href="#">Fish</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </header>
+    </div>
+    
+    <section id = "home">
+        <img src="img/main.jpg" id="main">
+        <img src="img/light.png" id="light">
+        <img src="img/dark.png" id="dark">
+        <h2 id="Mtext">Ocean World</h2>
+        <h3>Our Fish</h3>
+        <a href="#sec" id="btn"> View More</a>
+       
+    </section>
+
+    <div class="sec" id="sec">
+        <h2>Our Mission</h2>
+        <p>Lorem ipsum dolor sit amet, unum errem perfecto sit te, mollis accusam usu ne. In enim autem accumsan nam,
+            ad has ubique salutandi, pro illum putant deterruisset id. Harum labore has id, molestie invenire inciderint 
+            at pro. At alienum salutatus est, ei sea purto nobis facilis. Mazim verear deserunt ei nam. Ut movet aperiri 
+            iuvaret pri, labore laboramus pertinacia et vix<br><br>
+            Alia eleifend cu mel, cum postea pertinacia cu. Pri ei iusto verear aperiri. At autem minimum eam, et posse
+             repudiare assueverit sea. Etiam nihil accommodare nam ut, ei erant commune patrioque qui, summo offendit 
+             officiis mei id.
+            </p>
+    </div>
+       
+
+  
+    <script>
+        let main = document.getElementById('main');
+        let light = document.getElementById('light');
+        let dark= document.getElementById('dark');
+        let Mtext = document.getElementById('Mtext');
+        let btn = document.getElementById('btn');
+
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            light.style.let = value *0.25 + 'px';
+            Mtext.style.marginRight =  value * 8 +'px';
+            Mtext.style.marginTop = value * 1.5 +'px';
+            btn.style.marginTop = value *1.5 +'px';
+        })
+    </script>
+
+  
+
+</body>
+</html>
