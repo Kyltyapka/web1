@@ -5,17 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        
+    </style>
 </head>
 <body>
     <div class="header-container"> <!-- Контейнер для хедера з червоним фоном -->
-        <header>
+        <header class="desktop-header">
             <a href="#" class="logo">Ocean</a>
             <ul class="menu">
                 <li><a href="#home" class="active"> Home</a></li>
-                <li><a href="#">Fish</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#fish">Fish</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
+        </header>
+        <header class="mobile-header">
+            <a href="#" class="logo">Ocean</a>
+            <div class="mobile-menu">
+                <button id="menu-toggle">&#9776; Меню</button>
+                <ul class="mobile-menu-list"> <!-- Доданий елемент мобільного меню -->
+                    <li class="mobile-menu-links"><a href="#home" class="mobile-menu-links">Home</a></li>
+                    <li class="mobile-menu-links"><a href="#fish" class="mobile-menu-links">Fish</a></li>
+                    <li class="mobile-menu-links"><a href="#about" class="mobile-menu-links">About</a></li>
+                    <li class="mobile-menu-links"><a href="#contact" class="mobile-menu-links">Contact</a></li>
+                </ul>
+            </div>
         </header>
     </div>
     
@@ -29,7 +44,16 @@
        
     </section>
 
-    <div class="sec" id="sec">
+    <section id="fish">
+        <h2>Collection</h2>
+        <div class="fishes">
+        <img src="img/neon.jpg" width="300px" height="300px">
+        <img src="img/glouw.jpg" width="300px" height="300px">
+        <img src="img/piven.jpg" width="300px" height="300px">
+        </div>
+    </section>
+
+    <section id="about">
         <h2>Our Mission</h2>
         <p>Lorem ipsum dolor sit amet, unum errem perfecto sit te, mollis accusam usu ne. In enim autem accumsan nam,
             ad has ubique salutandi, pro illum putant deterruisset id. Harum labore has id, molestie invenire inciderint 
@@ -38,9 +62,86 @@
             Alia eleifend cu mel, cum postea pertinacia cu. Pri ei iusto verear aperiri. At autem minimum eam, et posse
              repudiare assueverit sea. Etiam nihil accommodare nam ut, ei erant commune patrioque qui, summo offendit 
              officiis mei id.
-            </p>
-    </div>
+        </p>
+
+        <h3>Our Goals</h3>
+        <div class="table">
+            <table border="1" class="table_main">
+                <tr>
+                    <th>Співпраця</th>
+                    <td>
+                        <ol>
+                            <li> <a href="https://neal.fun/deep-sea/">Ocean Depth</a></li>
+                            <li>Та інші поставники:
+                                <ul>
+                                    <li>Alia</li>
+                                    <li>Erant</li>
+                                    <li>Pri</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Досягнення</th>
+                    <td>
+                        <ul>
+                            <li>Розширення аудиторії відвідувачів та клієнтів</li>
+                            <li>Виставка товарів</li>
+                            <li>Підвищення лояльності клієнтів</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
        
+    </section>
+
+
+  
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="form-container">
+            <form name="forma1">
+                <p>Введіть свій email для зворотнього зв'язку:</p>
+                <input type="email" name="email" maxlength="50" placeholder="Введіть email">
+                <button class="send" type="reset">Надіслати</button>
+            </form>
+        </div>
+        <div class="text2">
+            <p>Або оформіть замовлення, заповнивши форму:</p>
+        </div>
+        <div class="form-container">
+            <form name="forma2">
+                <p>Введіть Ваше ПІБ:</p>
+                <input type="text" name="pib" maxlength="50" placeholder="Введіть ПІБ">
+                <p>Введіть номер телефону:</p>
+                <input type="text" name="namecompany" maxlength="50" placeholder="Введіть номер телефону">
+                <p>Види рибок:</p>
+                <input type="checkbox" name="var1" value="gypiya" checked> гупія
+                <input type="checkbox" name="var2" value="mechonosech"> мечоносець
+                <input type="checkbox" name="var3" value="neon"> неони
+                <input type="checkbox" name="var4" value="gold"> золота рибка
+                <input type="checkbox" name="var5" value="skalyarii"> скалярії<br><br>
+                <p>Кількість рибок:</p>
+                <select name="language">
+                    <option selected value="oneday">1-10</option>
+                    <option value="onemonth">10-20</option>
+                    <option value="threemonth">20- і більше</option>
+                </select><br><br>
+                <p>Чи потрібна Вам консультація:</p>
+                <input type="radio" name="admin" value="yes" checked>Так
+                <input type="radio" name="director" value="no">Ні\<br><br>
+                <button class="send" type="reset">Надіслати</button>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <p>Logo &#8482;</p>
+    </footer>
+
 
   
     <script>
@@ -57,6 +158,22 @@
             Mtext.style.marginTop = value * 1.5 +'px';
             btn.style.marginTop = value *1.5 +'px';
         })
+
+
+        
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenuList = document.querySelector('.mobile-menu-list');
+
+        menuToggle.addEventListener('click', function () {
+            mobileMenuList.classList.toggle('active'); // Додаємо або видаляємо клас 'active' для списку мобільного меню
+        });
+    });
+
+
+
     </script>
 
   
